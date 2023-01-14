@@ -2,7 +2,18 @@ import React from 'react'
 
 function Schedule() {
   return (
-    <div>Schedule</div>
+    <div><form>
+      <input type="text" />
+      <input type="date" />
+      <input type="text" />
+      <input type="date" />
+      <input type="text" />
+      <input type="date" />
+      <input type="text" />
+      <input type="date" />
+      <input type="text" />
+      <input type="date" />
+      </form></div>
   )
 }
 
