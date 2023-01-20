@@ -5,6 +5,7 @@ import Fallback from "./components/Fallback";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import NavBar from "./components/NavBar";
+import NewAccount from './components/NewAccount';
 import Schedule from "./components/Schedule";
 
 function App() {
@@ -14,16 +15,20 @@ function App() {
     setCurrentUser(x)
   }
   return (
-    <div className="App">
-      <NavBar />
+    <>
+      <NavBar currentUser={currentUser} handleUpdateUser={handleUpdateUser}/>
 
       <Switch>
         <Route path="/login">
           <Login handleUpdateUser={handleUpdateUser}/>
         </Route>
 
+        <Route path="/users/new">
+          <NewAccount handleUpdateUser={handleUpdateUser}/>
+        </Route>
+
         <Route path="/about">
-          <About />
+          <About currentUser={currentUser}/>
         </Route>
 
         <Route path="/schedule">
@@ -38,7 +43,7 @@ function App() {
           <Fallback />
         </Route>
       </Switch>
-    </div>
+    </>
   );
 }
 

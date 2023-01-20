@@ -1,4 +1,4 @@
-import { useHistory } from "react-router-dom"
+import { useHistory, Link } from "react-router-dom"
 import { Input, Form } from "./styled/Form";
 import { Div } from "./styled/Div";
 import { useForm } from "../hooks/useForm";
@@ -13,11 +13,25 @@ function Login({ handleUpdateUser }) {
   
   const history = useHistory()
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    handleUpdateUser(formData.user)
-    history.push("/schedule")
-}
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch("http://localhost:3001/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      const resp = await res.json();
+      handleUpdateUser(resp.user)
+      history.push("/schedule")
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
 
   return (
     <Div>
@@ -28,6 +42,7 @@ function Login({ handleUpdateUser }) {
         <Input type="password" id="pw" name="password" onChange={handleChange}/>
         <Input type="submit" value="Login" />
       </Form>
+      <p>Don't have an account? No worries! Click <Link to="/users/new"><span>here</span></Link> to create an account.</p>
     </Div>
   );
 }

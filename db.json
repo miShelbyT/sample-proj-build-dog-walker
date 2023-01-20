@@ -13,6 +13,30 @@
       "walk-length": "60",
       "walk-with-dogs": "no",
       "id": 2
+    },
+    {
+      "dog-name": "Tiger Rose",
+      "date": "2023-01-27T11:00",
+      "walk-length": "45",
+      "walk-with-dogs": "yes",
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "user": "Chris",
+      "password": "123",
+      "id": 1
+    },
+    {
+      "user": "Shelby",
+      "password": "123",
+      "id": 2
+    },
+    {
+      "user": "Chris",
+      "password": "123",
+      "id": 3
     }
   ]
 }
