@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
-function Home() {
+function Home({ currentUser }) {
   return (
-    <div>Home</div>
-  )
+    <div>
+      <h3>Welcome {currentUser || "All Dogs!"}</h3>
+    </div>
+  );
 }
 
-export default Home
+export default Home;

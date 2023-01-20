@@ -7,9 +7,9 @@ function NavBar() {
       style={{ height: 60, border: "1px solid red" }}
       className="nav-container"
     >
-      <NavLink exact to="/" style={{ textDecoration: "none" }}>
-        <span style={{ fontSize: 28 }}>🐶</span>
-      </NavLink>
+      <Link to="/" style={{ textDecoration: "none" }}>
+        <span style={{ fontSize: 28 }}>🐶 Dog Walkers R Us</span>
+      </Link>
 
       <div>
         <NavLink to="/login">

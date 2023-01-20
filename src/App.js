@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Switch, Route } from "react-router-dom";
 import About from "./components/About";
 import Fallback from "./components/Fallback";
@@ -7,13 +8,18 @@ import NavBar from "./components/NavBar";
 import Schedule from "./components/Schedule";
 
 function App() {
+  const [currentUser, setCurrentUser] = useState(null)
+
+  const handleUpdateUser = (x) => {
+    setCurrentUser(x)
+  }
   return (
     <div className="App">
       <NavBar />
 
       <Switch>
         <Route path="/login">
-          <Login />
+          <Login handleUpdateUser={handleUpdateUser}/>
         </Route>
 
         <Route path="/about">
@@ -21,11 +27,11 @@ function App() {
         </Route>
 
         <Route path="/schedule">
-          <Schedule />
+          <Schedule currentUser={currentUser}/>
         </Route>
 
         <Route exact path="/">
-          <Home />
+          <Home currentUser={currentUser}/>
         </Route>
 
         <Route path="/*">
