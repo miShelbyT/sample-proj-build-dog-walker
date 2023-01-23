@@ -5,10 +5,13 @@ import { Div } from "./styled/Div";
 function Schedule({ currentUser }) {
   const { formData, reset, handleChange } = useForm({
     "dog-name": "",
-    date: "",
+    date: new Date().toISOString().slice(0,-8),
     "walk-length": "",
     "walk-with-dogs": "yes"
   });
+
+  const fourWeeks = new Date(Date.now() + (12096e5 * 2)).toISOString().slice(0,-8)
+  console.log(fourWeeks)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,8 +45,9 @@ function Schedule({ currentUser }) {
         <label htmlFor="date">Date: </label>
         <Input
           type="datetime-local"
-          min="2023-01-19T09:00"
-          max="2023-03-01T19:00"
+          min={formData.date}
+          max={fourWeeks}
+          step="900"
           id="date"
           name="date"
           value={formData.date}
