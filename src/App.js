@@ -9,7 +9,7 @@ import NewAccount from './components/NewAccount';
 import Schedule from "./components/Schedule";
 
 function App() {
-  const [currentUser, setCurrentUser] = useState(null)
+  const [currentUser, setCurrentUser] = useState("Shelby")
 
   const handleUpdateUser = (x) => {
     setCurrentUser(x)

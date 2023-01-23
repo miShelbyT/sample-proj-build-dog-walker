@@ -26,17 +26,16 @@
     {
       "user": "Chris",
       "password": "123",
-      "id": 1
-    },
-    {
-      "user": "Shelby",
-      "password": "123",
-      "id": 2
+      "number-of-dogs": "2",
+      "dog-info": "test",
+      "id": 3
     },
     {
       "user": "Chris",
       "password": "123",
-      "id": 3
+      "number-of-dogs": 2,
+      "dog-info": "testing..",
+      "id": 4
     }
   ]
 }

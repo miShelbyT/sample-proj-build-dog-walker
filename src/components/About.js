@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom' 
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import dogs from "../assets/alvan-nee-1VgfQdCuX-4-unsplash.jpg";
 
@@ -14,14 +14,19 @@ const Div = styled.main`
   background-size: contain;
 `;
 
-function About({currentUser}) {
+const H2 = styled.h2`
+  margin: 55px;
+`;
 
-  
+
+function About({ currentUser }) {
   return (
     <Div>
-      <h2 style={{margin: 55}}>
-        Got a dog? What a coincidence. We walk dogs! 🐾🐾🐾🐾 <hr></hr>{currentUser ? <Link to="/schedule">Click here</Link> : <Link to="/users/new">Create an account</Link>} to book a time with us!
-      </h2>
+      <H2>
+        Got a dog? What a coincidence. We walk dogs! 🐾🐾🐾🐾 </H2><hr></hr>
+          <H2><Link to={currentUser ? "/schedule" : "/users/new"}>Click here</Link> to {currentUser ? "book a time with us!" : "create an account!" }</H2>
+        
+      
       <p style={{ marginTop: 600, textAlign: "center" }}>
         Photo by{" "}
         <a href="https://unsplash.com/@alvannee?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">

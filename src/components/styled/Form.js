@@ -5,6 +5,9 @@ display: flex;
 flex-wrap: wrap;
 flex-direction: column;
 padding: 17px;
+margin-top: 50px;
+border: 2px solid green;
+border-radius: 4px;
 `
 
 export const Input = styled.input`

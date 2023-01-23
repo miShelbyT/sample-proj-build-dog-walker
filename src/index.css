@@ -12,12 +12,6 @@ code {
     monospace;
 }
 
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .active button {
   background: brown;
   color: aliceblue;
